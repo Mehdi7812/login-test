@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-// import Image from "next/image";
+import Image from "next/image";
 
 interface UserData {
   name: string;
@@ -67,12 +67,13 @@ export default function Dashboard() {
             <div className="flex flex-col md:flex-row gap-8 items-center">
               {/* user Image */}
               <div className="flex-shrink-0">
-                <img
+                <Image
                   src={userData.picture}
                   alt="User profile"
                   className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
-                  // width={128}
-                  // height={128}
+                  width={128}
+                  height={128}
+                  unoptimized
                 />
               </div>
 

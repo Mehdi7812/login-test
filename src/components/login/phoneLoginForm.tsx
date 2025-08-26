@@ -46,8 +46,10 @@ export default function PhoneLoginForm() {
           picture: user.picture.large,
         };
 
-        // ذخیره اطلاعات در localStorage
-        localStorage.setItem("userData", JSON.stringify(userData));
+        if(typeof window !== "undefined") {
+          // ذخیره اطلاعات در localStorage
+          localStorage.setItem("userData", JSON.stringify(userData));
+        }
 
         // انتقال به صفحه داشبورد
         router.push("/dashboard");

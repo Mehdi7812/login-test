@@ -18,19 +18,23 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // دریافت اطلاعات کاربر از localStorage
-    const storedData = localStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
-    } else {
-      // اگر اطلاعات کاربر وجود ندارد، به صفحه login هدایت شود
-      router.replace("/login");
-    }
+    if(typeof window !== "undefined") {
+      // دریافت اطلاعات کاربر از localStorage
+      const storedData = localStorage.getItem("userData");
+      if (storedData) {
+        setUserData(JSON.parse(storedData));
+      } else {
+        // اگر اطلاعات کاربر وجود ندارد، به صفحه login هدایت شود
+        router.replace("/login");
+      }
+    };
   }, [router]);
 
   const handleLogout = () => {
-    // حذف اطلاعات کاربر از localStorage
-    localStorage.removeItem("userData");
+    if(typeof window !== "undefined") {
+      // حذف اطلاعات کاربر از localStorage
+      localStorage.removeItem("userData");
+    }
     // هدایت به صفحه login
     router.push("/login");
   };

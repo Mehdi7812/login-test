@@ -73,6 +73,7 @@ export default function Dashboard() {
                   className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
                   width={128}
                   height={128}
+                  unoptimized
                 />
               </div>
 
